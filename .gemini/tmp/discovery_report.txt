@@ -1,0 +1,6 @@
+✓ Loaded ux_design_content from 2 files: ux-design-specification.md, ux-design-spec-validation-report-2025-11-21_14-30-00.md
+○ No prd files found
+○ No gdd files found
+○ No architecture files found
+○ No epics files found
+○ No document_project files found
