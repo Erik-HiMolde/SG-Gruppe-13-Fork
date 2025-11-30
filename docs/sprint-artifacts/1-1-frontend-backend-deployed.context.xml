@@ -1,0 +1,108 @@
+<story-context id=".bmad/bmm/workflows/4-implementation/story-context/template" v="1.0">
+  <metadata>
+    <epicId>1</epicId>
+    <storyId>1</storyId>
+    <title>Frontend Backend Deployed</title>
+    <status>drafted</status>
+    <generatedAt>2025-11-30</generatedAt>
+    <generator>BMAD Story Context Workflow</generator>
+    <sourceStoryPath>docs/sprint-artifacts/1-1-frontend-backend-deployed.md</sourceStoryPath>
+  </metadata>
+
+  <story>
+    <asA>As a student,</asA>
+    <iWant>I want to access a deployed application and see a "Hello World" message from the backend,</iWant>
+    <soThat>so that I know the core system is operational.</soThat>
+    <tasks>
+- [ ] **Task 1: Initialize Project (AC: #1)**
+  - [ ] Subtask 1.1: Run `npx create-next-app@latest sentiabot --typescript --tailwind --eslint --app` to scaffold the project structure.
+  - [ ] Subtask 1.2: Initialize a new Supabase project and configure the required environment variables in a `.env.local` file.
+- [ ] **Task 2: Create Backend Endpoint (AC: #2)**
+  - [ ] Subtask 2.1: Implement a Next.js API route at `/api/hello` that returns a JSON object: `{ "message": "Hello World" }`.
+- [ ] **Task 3: Connect Frontend to Backend (AC: #2)**
+  - [ ] Subtask 3.1: On the main frontend page (`src/app/page.tsx`), use a client-side `fetch` call to the `/api/hello` endpoint.
+  - [ ] Subtask 3.2: Display the "Hello World" message received from the API on the page.
+- [ ] **Task 4: Verify Database Connection (AC: #3)**
+  - [ ] Subtask 4.1: Implement a Supabase client in `src/lib/supabase.ts`.
+  - [ ] Subtask 4.2: Create a test mechanism (e.g., a temporary API route or server-side log) that executes a simple query (e.g., `select 1`) to confirm a successful connection to the Supabase instance.
+    </tasks>
+  </story>
+
+  <acceptanceCriteria>
+1. A Next.js frontend and backend are initialized using the specified starter command.
+2. When I navigate to the application's local URL, I see a "Hello World" message originating from a backend API endpoint.
+3. The application includes a provisioned Supabase database connection, ready for future data integration.
+  </acceptanceCriteria>
+
+  <artifacts>
+    <docs>
+      <doc>
+        <path>docs/fase-3-solutioning/architecture.md</path>
+        <title>Architecture</title>
+        <section>Project Initialization</section>
+        <snippet>Project initialization using `npx create-next-app@latest sentiabot --typescript --tailwind --eslint --app` should be the first implementation story.</snippet>
+      </doc>
+      <doc>
+        <path>docs/fase-3-solutioning/architecture.md</path>
+        <title>Architecture</title>
+        <section>ADR 005: Deployment Target - Local Development Environment Only</section>
+        <snippet>The application will be deployed and run exclusively within a local development environment.</snippet>
+      </doc>
+	  <doc>
+        <path>docs/fase-2-plan/prd.md</path>
+        <title>Product Requirements Document</title>
+        <section>Epic 1: Foundational End-to-End Chat</section>
+        <snippet>Establish the core technical infrastructure and deliver the simplest possible end-to-end user experience.</snippet>
+      </doc>
+    </docs>
+    <code></code>
+    <dependencies>
+      <dependency>
+        <name>Next.js</name>
+        <version>latest</version>
+      </dependency>
+      <dependency>
+        <name>React</name>
+        <version>latest</version>
+      </dependency>
+      <dependency>
+        <name>TypeScript</name>
+        <version>latest</version>
+      </dependency>
+      <dependency>
+        <name>Tailwind CSS</name>
+        <version>latest</version>
+      </dependency>
+      <dependency>
+        <name>Shadcn UI</name>
+        <version>latest</version>
+      </dependency>
+      <dependency>
+        <name>Supabase</name>
+        <version>latest</version>
+      </dependency>
+    </dependencies>
+  </artifacts>
+
+  <constraints>
+    <constraint>Deployment is local only. All verification should be done via `npm run dev`.</constraint>
+    <constraint>Project structure must be the standard Next.js 14+ App Router layout.</constraint>
+    <constraint>Environment variables must be stored in `.env.local`.</constraint>
+  </constraints>
+  <interfaces>
+    <interface>
+      <name>/api/hello</name>
+      <kind>REST endpoint</kind>
+      <signature>GET /api/hello -> { "message": "Hello World" }</signature>
+      <path>src/app/api/hello/route.ts</path>
+    </interface>
+  </interfaces>
+  <tests>
+    <standards>Test files should be co-located with the source code they test, using the `*.test.ts` or `*.spec.ts` naming convention.</standards>
+    <locations>src/</locations>
+    <ideas>
+      <idea>Create a test for the `/api/hello` endpoint to ensure it returns the correct JSON response.</idea>
+      <idea>Create a test for the Supabase connection to verify that a simple query can be executed.</idea>
+    </ideas>
+  </tests>
+</story-context>
