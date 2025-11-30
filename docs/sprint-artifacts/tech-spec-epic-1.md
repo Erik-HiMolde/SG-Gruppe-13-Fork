@@ -26,7 +26,7 @@ Sentiabot is an AI-powered educational tool designed to provide elementary schoo
 - Clear presentation of information sources (e.g., source links).
 - Consistent and predictable user interactions.
 - Accessibility on desktops, laptops, and tablets.
-- Minimal UI "chrome" to prevent distraction.
+- Minimal UI 'chrome' to prevent distraction.
 - Shadcn UI as the chosen design system.
 - WCAG 2.1 Level AA accessibility compliance.
 
@@ -437,3 +437,9 @@ The test strategy will encompass multiple levels to ensure the quality, reliabil
 
 **Traceability:**
 *   Test cases will be directly traceable to the Acceptance Criteria (as per `Traceability Mapping` table) and the UX Design Specification sections.
+
+## Post-Review Follow-ups (AI)
+
+- [ ] [Medium] Implement unit/integration tests for `/api/hello` endpoint to verify it returns `"{ "message": "Hello World" }"` as expected. (AC #2) [file: sentiabot/app/api/hello/route.ts] (Reference Story 1.1)
+- [ ] [Medium] Implement unit/integration tests for `supabase.ts` client to verify successful connection to Supabase. (AC #3) [file: sentiabot/lib/supabase.ts] (Reference Story 1.1)
+- Note: Consider the lifecycle and exposure of `sentiabot/app/api/check-db/route.ts`. Ensure it's not exposed in production, or integrate its testing functionality more formally into a test suite and remove the direct API route. (Reference Story 1.1)
