@@ -1,6 +1,6 @@
 # Story 1.1: Frontend Backend Deployed
 
-Status: ready-for-dev
+Status: approved
 
 ## Story
 
@@ -17,17 +17,15 @@ so that I know the core system is operational.
 ## Tasks / Subtasks
 
 - [ ] **Task 1: Initialize Project (AC: #1)**
-  - [ ] Subtask 1.1: Run `npx create-next-app@latest sentiabot --typescript --tailwind --eslint --app` to scaffold the project structure.
-  - [ ] Subtask 1.2: Initialize a new Supabase project and configure the required environment variables in a `.env.local` file.
+  - [x] Subtask 1.1: Run `npx create-next-app@latest sentiabot --typescript --tailwind --eslint --app` to scaffold the project structure.
+  - [x] Subtask 1.2: Initialize a new Supabase project and configure the required environment variables in a `.env.local` file.
 - [ ] **Task 2: Create Backend Endpoint (AC: #2)**
-  - [ ] Subtask 2.1: Implement a Next.js API route at `/api/hello` that returns a JSON object: `{ "message": "Hello World" }`.
+  - [x] Subtask 2.1: Implement a Next.js API route at `/api/hello` that returns a JSON object: `{ "message": "Hello World" }`.
 - [ ] **Task 3: Connect Frontend to Backend (AC: #2)**
-  - [ ] Subtask 3.1: On the main frontend page (`src/app/page.tsx`), use a client-side `fetch` call to the `/api/hello` endpoint.
-  - [ ] Subtask 3.2: Display the "Hello World" message received from the API on the page.
-- [ ] **Task 4: Verify Database Connection (AC: #3)**
-  - [ ] Subtask 4.1: Implement a Supabase client in `src/lib/supabase.ts`.
-  - [ ] Subtask 4.2: Create a test mechanism (e.g., a temporary API route or server-side log) that executes a simple query (e.g., `select 1`) to confirm a successful connection to the Supabase instance.
-
+  - [x] Subtask 3.1: On the main frontend page (`src/app/page.tsx`), use a client-side `fetch` call to the `/api/hello` endpoint.
+  - [x] Subtask 3.2: Display the "Hello World" message received from the API on the page.- [ ] **Task 4: Verify Database Connection (AC: #3)**
+  - [x] Subtask 4.1: Implement a Supabase client in `src/lib/supabase.ts`.
+  - [x] Subtask 4.2: Create a test mechanism (e.g., a temporary API route or server-side log) that executes a simple query (e.g., `select 1`) to confirm a successful connection to the Supabase instance.
 ## Dev Notes
 
 - This story establishes the foundational skeleton of the application. Adherence to the prescribed `create-next-app` command is critical for architecture alignment.
@@ -67,6 +65,41 @@ First story in epic - no predecessor context
 
 ### Debug Log References
 
+- **Subtask 1.1 Plan**: Execute `npx create-next-app@latest sentiabot --typescript --tailwind --eslint --app` to scaffold the project structure. Accept default prompts.
+- **Subtask 1.2 Plan**:
+  1. Initialize a new Supabase project using `supabase init` and `supabase link`.
+  2. Obtain Supabase project URL and anon key.
+  3. Create `.env.local` in `sentiabot/` and configure `NEXT_PUBLIC_SUPABASE_URL` and `NEXT_PUBLIC_SUPABASE_ANON_KEY`.
+
 ### Completion Notes List
 
+- ✅ Subtask 1.1: Initialized Next.js project `sentiabot` with TypeScript, Tailwind CSS, ESLint, and App Router.
+- ✅ Subtask 1.2: Initialized Supabase project, linked to remote, and configured environment variables in `.env.local`.
+- ✅ Subtask 2.1: Implemented Next.js API route `/api/hello` returning `{ "message": "Hello World" }`.
+- ✅ Subtask 3.1 & 3.2: Modified `sentiabot/app/page.tsx` to fetch and display "Hello World" from `/api/hello`.
+- ✅ Subtask 4.1 & 4.2: Implemented Supabase client and created API route to check database connection.
+
 ### File List
+- sentiabot/
+  - .next/
+  - app/
+    - api/
+      - check-db/
+        - route.ts
+      - hello/
+        - route.ts
+    - page.tsx
+  - lib/
+    - supabase.ts
+  - node_modules/
+  - public/
+  - .gitignore
+  - eslint.config.mjs
+  - next-env.d.ts
+  - next.config.ts
+  - package-lock.json
+  - package.json
+  - postcss.config.mjs
+  - README.md
+  - tsconfig.json
+  - .env.local
