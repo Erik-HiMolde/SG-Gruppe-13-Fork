@@ -71,7 +71,7 @@ research report: @/docs/research-technical-2025-10-30-frontend.md
 - **Shadcn UI**: Shadcn UI for rapid, responsive UI development
 - **Authentication UI**: Supabase Auth UI components + custom styling
 - **API Communication**: Axios with interceptors for authenticated requests
-- **Deployment**: Vercel for frontend hosting with automatic CI/CD
+- **Deployment**: Local serving for development and testing
 
 
 ### Backend Specification
@@ -89,7 +89,7 @@ research report: @/docs/research-technical-2025-10-30-backend.md
 - **API Documentation**: FastAPI automatic OpenAPI/Swagger documentation
 - **Testing**: Pytest for unit and integration tests
 - **Build Tool**: UV for fast Python package management
-- **Deployment**: Vercel (FastAPI supports Vercel deployment)
+- **Deployment**: Local serving for development and testing
 
 **API Architecture**: RESTful API design with versioning (/api/v1/) and clear resource-oriented endpoints. Supabase Realtime for live chat instead of WebSockets.
 

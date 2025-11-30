@@ -57,7 +57,7 @@
 *   **Database:** Supabase (Postgres Vector Database)
 *   **AI:** Google Gemini 2.5 Pro
 *   **Authentication:** Supabase Auth
-*   **Deployment:** Vercel
+*   **Deployment:** run locally
 
 **7. Success Metrics**
 
